@@ -1,5 +1,6 @@
-class Admin::ProductsController < ApplicationController
 
+class Admin::ProductsController < ApplicationController
+  http_basic_authenticate_with name:ENV["AD_USER"], password:ENV["AD_PASSWORD"], except: [:index]
   def index
     @products = Product.order(id: :desc).all
   end
@@ -36,5 +37,10 @@ class Admin::ProductsController < ApplicationController
       :price
     )
   end
+  # def authenticate
+  #   puts "authenticating"
+  #   http_basic_authenticate_with name: "Jungle", password: "book"
+  #   raise "error"
+  # end
 
 end
