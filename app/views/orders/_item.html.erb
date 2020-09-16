@@ -1,0 +1,10 @@
+
+<section>
+<h3> <%= product.name %> </h3>
+<h5>quantity: <%= line_item.quantity %> </h5>
+<h5> <%= product.description %> </h5>
+<h5> <%=humanized_money_with_symbol price %> </h5>
+<%= image_tag product.image.tiny %>
+</section>
+<br>
+<br>
