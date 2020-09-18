@@ -20,7 +20,7 @@
        
         <% if current_user%>
         <li>
-        <a><span class="text-primary">Signed in as <%=current_user.email %></span></a>
+        <a><span class="text-primary">Signed in as <%=current_user.first_name %><%=current_user.last_name%></span></a>
         </li>
         <li>
           <%= link_to "Logout", logout_path %>
