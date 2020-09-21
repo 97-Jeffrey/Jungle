@@ -41,4 +41,36 @@ RSpec.describe User, type: :model do
     end
 
   end
+
+  describe '.authenticate_with_credentials' do
+    it "should anthenticate when login infos are correct" do
+      person1 = User.create(first_name:"Yu Hao", last_name:"Shao", email:'shao0909@gmail.com',password:"678910", password_confirmation:"678910")
+      loginPerson1 = User.authenticate_with_credentials(person1.email, person1.password)
+      expect(loginPerson1).to eq person1
+    end
+    
+    it "should not anthenticate when login infos are incorrect, case: incorrect email" do
+      person1 = User.create(first_name:"Yu Hao", last_name:"Shao", email:'shao0909@gmail.com',password:"678910", password_confirmation:"678910")
+      loginPerson1 = User.authenticate_with_credentials('shao@gmail.com', person1.password)
+      expect(loginPerson1).not_to eq person1
+    end
+
+    it "should not anthenticate when login infos are incorrect, case: incorrect password" do
+      person1 = User.create(first_name:"Yu Hao", last_name:"Shao", email:'shao0909@gmail.com',password:"678910", password_confirmation:"678910")
+      loginPerson1 = User.authenticate_with_credentials(person1.email, '233333')
+      expect(loginPerson1).not_to eq person1
+    end
+
+    it "should anthenticate even extra spaces are before/after email" do
+      person1 = User.create(first_name:"Yu Hao", last_name:"Shao", email:'shao0909@gmail.com',password:"678910", password_confirmation:"678910")
+      loginPerson1 = User.authenticate_with_credentials(' shao0909@gmail.com ', person1.password)
+      expect(loginPerson1).to eq person1
+    end
+
+    it "should anthenticate even extra spaces are before/after email" do
+      person1 = User.create(first_name:"Yu Hao", last_name:"Shao", email:'shao0909@gmail.com',password:"678910", password_confirmation:"678910")
+      loginPerson1 = User.authenticate_with_credentials('SHAO0909@gmail.com', person1.password)
+      expect(loginPerson1).to eq person1
+    end
+  end
 end
