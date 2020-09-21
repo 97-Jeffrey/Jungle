@@ -6,10 +6,10 @@ RSpec.describe User, type: :model do
       user = User.new(first_name:"Yu Hao", last_name:"Shao", email:"shao0909@gmail.com", password:"12345", password_confirmation:"12345")
       expect(user).to be_valid
       expect(user.errors.full_messages).to be_empty
-      expect(user)
+    
     end
 
-    it "should not be valid as emals in db are not case_sensitive" do
+    it "should not be valid as emails in db are not case_sensitive" do
       user1 = User.create(first_name:"haha", last_name:"hehe",email:"test@test.COM", password:"12345", password_confirmation:"12345")
       same_user1 = User.create(first_name:"haha", last_name:"hehe", email:"TEST@TEST.com" , password:"12345", password_confirmation:"12345")
       expect(same_user1).not_to be_valid
