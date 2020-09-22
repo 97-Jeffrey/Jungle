@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of practicing Rails by adding different functionalities through MVC framework and add tests to verify those functionalities are successfully implemented.
 
 
 ## Setup
@@ -13,6 +13,14 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 6. Sign up for a Stripe account
 7. Put Stripe (test) keys into appropriate .env vars
 8. Run `bin/rails s -b 0.0.0.0` to start the server
+
+## Screenshots
+
+![this is an example of a controller](https://github.com/97-Jeffrey/Jungle/blob/master/doc/Screen%20Shot%202020-09-22%20at%202.43.43%20PM.png?raw=true)
+
+![this is an example of a model](https://github.com/97-Jeffrey/Jungle/blob/master/doc/Screen%20Shot%202020-09-22%20at%202.45.39%20PM.png?raw=true)
+
+![this is an example of a view](https://github.com/97-Jeffrey/Jungle/blob/master/doc/Screen%20Shot%202020-09-22%20at%202.46.04%20PM.png?raw=true)
 
 ## Stripe Testing
 
