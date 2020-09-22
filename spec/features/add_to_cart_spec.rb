@@ -31,15 +31,16 @@ RSpec.feature "Add to cart", type: :feature, js: true do
     visit "/cart"
     expect(page).to have_content("Your cart has nothing on it, add more items from home Page")
 
+  
     visit root_path
     within(".product:nth-of-type(1)") { click_button "Add" }
+
 
     visit "/cart"
     expect(page).to have_content("My Cart")
     expect(page).to have_content("Unit Price")
     expect(page).to have_content("Quantity")
     expect(page).to have_content("Price")
-
   end
 
 end
