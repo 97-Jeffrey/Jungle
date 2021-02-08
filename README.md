@@ -2,7 +2,6 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of practicing Rails by adding different functionalities through MVC framework and add tests to verify those functionalities are successfully implemented.
 
-
 ## Setup
 
 1. Run `bundle install` to install dependencies
@@ -15,6 +14,12 @@ A mini e-commerce application built with Rails 4.2 for purposes of practicing Ra
 8. Run `bin/rails s -b 0.0.0.0` to start the server
 
 ## Screenshots
+
+### Home page of Jungle:
+
+![](https://github.com/jyxgao/jungle-rails/raw/master/docs/index.png?raw=true)
+
+### Some Code Snippets:
 
 ![this is an example of a controller](https://github.com/97-Jeffrey/Jungle/blob/master/doc/Screen%20Shot%202020-09-22%20at%202.43.43%20PM.png?raw=true)
 
@@ -30,6 +35,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+- Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+- PostgreSQL 9.x
+- Stripe
